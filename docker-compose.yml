@@ -1,0 +1,13 @@
+version: '3.8'
+services: 
+  node-webpack-react-router:
+    restart: always 
+    build: 
+      context: .
+      dockerfile: ./images/Dockerfile
+    volumes: 
+      - /app/node_modules
+      - ./www:/app 
+    ports: 
+      - "3040:3000"
+      - "8090:8080"
